@@ -16,7 +16,7 @@ describe('Function Prices', () => {
         assert.deepEqual(`Le prix de Dunk Dream est d'environ 220€.`, agent.responseMessages_[0].text);
     });
 
-    it('should return 220 when looking for Dunk Dream price', () => {
+    it('should return 100 when looking for Raguy price', () => {
         // Given
         const agent = new AgentBuilder()
         .withParameters({ 'Game': 'Raguy' })
@@ -27,6 +27,19 @@ describe('Function Prices', () => {
 
         // Then
         assert.deepEqual(`Le prix de Raguy est d'environ 100€.`, agent.responseMessages_[0].text);
+    });
+
+    it('should return 100 when looking for raguy price', () => {
+        // Given
+        const agent = new AgentBuilder()
+        .withParameters({ 'Game': 'raguy' })
+        .build();
+
+        // When
+        handler(agent);
+
+        // Then
+        assert.deepEqual(`Le prix de raguy est d'environ 100€.`, agent.responseMessages_[0].text);
     });
 
     it('should return Je ne connais pas le prix de Dunk Dream 2 when looking for Dunk Dream 2 price', () => {

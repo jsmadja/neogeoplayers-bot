@@ -466,7 +466,7 @@ const pricesData =
 module.exports = agent => {
     const parameters = agent.parameters;
     const gameName = parameters['Game'];
-    let game = _(pricesData).filter(p => p.title === gameName).value();
+    let game = _(pricesData).filter(p => p.title.toLowerCase() === gameName.toLowerCase()).value();
     let price;
     if (game.length > 0) {
         price = `Le prix de ${gameName} est d'environ ${game[0].gamer}€.` ;
