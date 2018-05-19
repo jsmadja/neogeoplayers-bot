@@ -55,6 +55,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     intentMap.set('Default Fallback Intent', fallback);
     intentMap.set('MemberLocation', require('./responses/member-location'));
     intentMap.set('Games', require('./responses/games'));
+    intentMap.set('GameDetail', require('./responses/game-detail'));
     intentMap.set('Price', require('./responses/prices'));
     // intentMap.set('your intent name here', yourFunctionHandler);
     // intentMap.set('your intent name here', googleAssistantHandler);
