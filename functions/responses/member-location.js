@@ -5,5 +5,6 @@ const memberLocations = {
 module.exports = agent => {
     const parameters = agent.parameters;
     const city = parameters['geo-city'];
-    agent.add(memberLocations[city].join(', '));
+    const memberLocation = memberLocations[city] || [`Personne n'habite à ${city}.`];
+    agent.add(memberLocation.join(', '));
 };
