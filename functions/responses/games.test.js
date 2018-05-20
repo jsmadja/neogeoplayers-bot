@@ -8,11 +8,13 @@ describe('Function Games', () => {
         const agent = new AgentBuilder().build();
 
         // When
-        handler(agent);
+        return handler(agent)
 
         // Then
-        assert.deepEqual('ASO II : Last Guardian', agent.responseMessages_[0].text);
-        assert.deepEqual('Andro Dunos', agent.responseMessages_[1].text);
+        .then(() => {
+            assert.deepEqual('King Of Fighters \'94', agent.responseMessages_[0].text);
+            assert.deepEqual('Sengoku Densho', agent.responseMessages_[1].text);
+        });
     });
 
 });

@@ -65,3 +65,4 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 });
 
 // https://us-central1-neogeoplayers-bot.cloudfunctions.net/dialogflowFirebaseFulfillment
+// https://525195b0.ngrok.io/neogeoplayers-bot/us-central1/dialogflowFirebaseFulfillment

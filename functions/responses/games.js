@@ -1,14 +1,11 @@
-module.exports = agent => require('../data.json').forEach(p => agent.add(p.title));
-
-/*
-const Repository = require('../lib/repository');
+const datastore = require('../lib/datastore')();
 
 module.exports = agent =>
     new Promise((resolve) => {
-        Repository.getGames()
-        .then(games => {
+        const companyQuery = datastore.createQuery('Game');
+        const selectQuery = companyQuery.select();
+        return datastore.runQuery(selectQuery, function(err, games) {
             games.forEach(game => agent.add(game.title));
             return resolve();
         });
     });
- */

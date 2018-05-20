@@ -11,9 +11,11 @@
   "scripts": {
     "start": "firebase serve --only functions:dialogflowFirebaseFulfillment",
     "deploy": "firebase deploy --only functions:dialogflowFirebaseFulfillment",
-    "test": "mocha responses/*.test.js"
+    "test": "mocha responses/*.test.js",
+    "test:watch": "npm t -- --watch --timeout=10000"
   },
   "dependencies": {
+    "@google-cloud/datastore": "^1.4.0",
     "actions-on-google": "2.0.0-alpha.4",
     "bluebird": "^3.5.1",
     "dialogflow": "^0.1.0",
