@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "actions-on-google": "2.0.0-alpha.4",
+    "bluebird": "^3.5.1",
     "dialogflow": "^0.1.0",
     "dialogflow-fulfillment": "0.3.0-beta.3",
     "firebase-admin": "^4.2.1",
     "firebase-functions": "^0.5.7",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "mysql": "^2.15.0",
+    "mysql-promise": "^4.1.0"
   },
   "devDependencies": {
     "mocha": "^5.1.1"

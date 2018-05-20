@@ -63,3 +63,5 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     intentMap.set('RateGame.SetGameRate', require('./responses/set-game-rate'));
     agent.handleRequest(intentMap);
 });
+
+// https://us-central1-neogeoplayers-bot.cloudfunctions.net/dialogflowFirebaseFulfillment
