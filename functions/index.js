@@ -60,6 +60,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     intentMap.set('Price', require('./responses/prices'));
     intentMap.set('RateGame', require('./responses/rate-game'));
     intentMap.set('SetGameRate', require('./responses/set-game-rate'));
+    intentMap.set('GetGameRate', require('./responses/get-game-rate'));
     intentMap.set('RateGame.SetGameRate', require('./responses/set-game-rate'));
     agent.handleRequest(intentMap);
 });

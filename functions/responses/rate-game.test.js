@@ -9,10 +9,11 @@ describe('Function RateGame', () => {
         .build();
 
         // When
-        handler(agent);
-
-        // Then
-        assert.ok(agent.responseMessages_[0].text.startsWith('Que penses-tu de '));
+        return handler(agent)
+        .then(() => {
+            // Then
+            assert.ok(agent.responseMessages_[0].text.startsWith('Que penses-tu de '));
+        });
     });
 
 });

@@ -68,7 +68,7 @@ describe('Function SetRateGame', () => {
         // When
         return handler(agent)
         .then(() => {
-            assert.deepEqual(`Ok julien tu aimes King of Fighters '94`, agent.responseMessages_[0].text);
+            assert.deepEqual(`Actuellement, King of Fighters '94 est recommandé à 100% par les membres de NGP`, agent.responseMessages_[0].text);
         });
     });
 
@@ -137,7 +137,7 @@ describe('Function SetRateGame', () => {
         // When
         return handler(agent)
         .then(() => {
-            assert.deepEqual(`Ok julien tu aimes Raguy`, agent.responseMessages_[0].text);
+            assert.deepEqual(`Actuellement, Raguy est recommandé à 100% par les membres de NGP`, agent.responseMessages_[0].text);
         });
     });
 
