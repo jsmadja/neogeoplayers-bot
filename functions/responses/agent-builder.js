@@ -7,12 +7,36 @@ class AgentBuilder {
         return this;
     }
 
+    withRawContent(rawContent) {
+        this.rawContent = rawContent;
+        return this;
+    }
+
+    withQueryText(queryText) {
+        this.queryText = queryText;
+        return this;
+    }
+
+    withContext(context) {
+        this.context = context;
+        return this;
+    }
+
     build() {
+        if (this.rawContent) {
+            return new WebhookClient({
+                request: { body: this.rawContent },
+                response: {
+                    json: () => {
+                    }
+                }
+            });
+        }
         return new WebhookClient({
             request: {
                 body: {
                     queryResult: {
-                        queryText: 'qui habitent paris ?',
+                        queryText: this.queryText,
                         parameters: this.parameters,
                         allRequiredParamsPresent: true,
                         fulfillmentMessages: [{
@@ -28,6 +52,7 @@ class AgentBuilder {
                         diagnosticInfo: {},
                         languageCode: 'fr'
                     },
+                    outputContexts: this.context,
                     responseId: '84471359-dd06-4b16-9c15-8be1c5723eba',
                     originalDetectIntentRequest: {
                         payload: {}

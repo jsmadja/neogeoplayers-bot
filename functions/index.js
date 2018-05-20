@@ -12,7 +12,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const agent = new WebhookClient({ request, response });
 
     function welcome(agent) {
-        agent.add(`Welcome to my agent!`);
+        agent.add(`Salut, moi c'est G-Mantle ! Qui es-tu ?`);
+        agent.add(new Suggestion('Notons un jeu au hasard !'));
     }
 
     function fallback(agent) {
@@ -57,7 +58,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     intentMap.set('Games', require('./responses/games'));
     intentMap.set('GameDetail', require('./responses/game-detail'));
     intentMap.set('Price', require('./responses/prices'));
-    // intentMap.set('your intent name here', yourFunctionHandler);
-    // intentMap.set('your intent name here', googleAssistantHandler);
+    intentMap.set('RateGame', require('./responses/rate-game'));
+    intentMap.set('SetGameRate', require('./responses/set-game-rate'));
+    intentMap.set('RateGame.SetGameRate', require('./responses/set-game-rate'));
     agent.handleRequest(intentMap);
 });
